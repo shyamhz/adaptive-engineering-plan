@@ -92,41 +92,176 @@ Daily log in `log.md`: `Date | Deep hrs | Commit | Test? | Blocked? | Tomorrow 1
 
 ## 3. STRATEGIC SPINE + DEPENDENCY GRAPHS
 
-**Pillars (fixed):** 1 Web employability | 2 Systems depth | 3 Graphics/WebGPU differentiation | 4 AI leverage A→D | 5 Real construction L1→L5 | 6 Public proof | 7 Career distribution.
-**Engine:** Web 60–70% early → 45–55% late. Depth Systems 15%→10%. Differentiation Graphics 10%→15%. Multiplier AI embedded. Distribution 5%→25%.
+**Pillars (fixed):**
 
-**Branch A — Web (primary):** Linux+Git → HTML/CSS → JS (closures, event loop, fetch) → Browser (DOM, CORS, DevTools) → HTTP+REST → TS strict → React (components, Router, Query) → Node+Express (middleware, Zod) → Postgres (schema, joins, indexes, tx) + Redis → Auth (bcrypt, sessions, OAuth, OWASP) → Test (Vitest/Supertest/Playwright) → Docker+Actions+Vercel/Railway/Fly → Prod (Pino, /metrics, k6, rate-limit) → System design lite.
+1. Web employability
+2. Systems depth
+3. Graphics / WebGPU differentiation
+4. AI leverage (A → D)
+5. Real construction (L1 → L5)
+6. Public proof
+7. Career distribution
 
-**Branch B — Systems C/C++ (time-boxed, supports A):** GCC/Make/GDB → C pointers/arrays/structs/malloc → processes/FDs/sockets (Beej) + Valgrind → C++ RAII/refs/classes → threads/mutex/TSan (pool + race fix) → strace//proc/signals → hand HTTP server once → benchmark C++ vs Node (k6). Rust read-only ≤2h (C9 interview note only).
+**Engine split:**
 
-**Branch C — Graphics:** JS + vectors/matrices → Canvas → Three.js scene → WebGL triangle once (buffers, GLSL) → TSL nodes (GLSL→TSL convert) → WebGPU (`three/webgpu`, fallback) + compute + timestamps → particles/post-processing.
+- Web 60–70% early → 45–55% late.
+- Systems depth 15% → 10%.
+- Graphics differentiation 10% → 15%.
+- AI is the multiplier, embedded everywhere.
+- Distribution 5% → 25%.
+
+### Branch A — Web (primary)
+
+```text
+Linux + Git
+  → HTML / CSS
+  → JS (closures, event loop, fetch)
+  → Browser (DOM, CORS, DevTools)
+  → HTTP + REST
+  → TS strict
+  → React (components, Router, Query)
+  → Node + Express (middleware, Zod)
+  → Postgres (schema, joins, indexes, tx) + Redis
+  → Auth (bcrypt, sessions, OAuth, OWASP)
+  → Test (Vitest, Supertest, Playwright)
+  → Docker + Actions + Vercel / Railway / Fly
+  → Prod (Pino, /metrics, k6, rate-limit)
+  → System design lite
+```
+
+### Branch B — Systems C/C++ (time-boxed, supports A)
+
+```text
+GCC / Make / GDB
+  → C pointers, arrays, structs, malloc
+  → processes, FDs, sockets (Beej) + Valgrind
+  → C++ RAII, refs, classes
+  → threads, mutex, TSan (pool + race fix)
+  → strace, /proc, signals
+  → hand-rolled HTTP server once
+  → benchmark C++ vs Node (k6)
+```
+
+Rust is read-only, max 2h (C9 interview note only).
+
+### Branch C — Graphics
+
+```text
+JS + vectors / matrices
+  → Canvas
+  → Three.js scene
+  → WebGL triangle once (buffers, GLSL)
+  → TSL nodes (GLSL → TSL convert)
+  → WebGPU (`three/webgpu`, fallback) + compute + timestamps
+  → particles / post-processing
+```
 
 ---
 
 ## 4. STACK LOCKS + AI OPERATING SYSTEM
 
-**Locks:** TS strict (JS only C1) | React+Vite+Tailwind+Router+Query | Node+Express → Fastify/Nest pattern only if review says | Postgres+Prisma/Drizzle+Redis | Session+bcrypt+GitHub OAuth | Vitest+Supertest+Playwright | Docker+Actions+Vercel+Railway/Fly | Pino+k6 | GCC/Clang+Make+GDB+Valgrind | Three r17x+ `three/webgpu` | 1 CLI agent (Claude Code OR Codex, pick W05, stick 1 cycle) + Copilot inline.
+### Locked stack
 
-**AI stages:** C1 Stage A (no agent impl, tutor only) | C2–C3 A→B (manual types/routes/schema/auth; agent boilerplate/CSS/tests after yours) + weekly `agent-review.md` with 1 rejection | C4–C5 B (SPEC, agent scaffolds, you verify; require files-changed + run + test plan) | C6+ C→D (SPEC.md + AGENTS.md + eval checklist: builds? tests? perf? auth? demo? + `agent-failures.md`).
-**Bans:** no secrets in prompts, no `.env` committed, no agent→main without CI + diff read, if you cannot whiteboard it you cannot claim it.
+- TS strict (JS only in C1).
+- React + Vite + Tailwind + Router + Query.
+- Node + Express → Fastify / Nest pattern only if a review says so.
+- Postgres + Prisma / Drizzle + Redis.
+- Session + bcrypt + GitHub OAuth.
+- Vitest + Supertest + Playwright.
+- Docker + Actions + Vercel + Railway / Fly.
+- Pino + k6.
+- GCC / Clang + Make + GDB + Valgrind.
+- Three r17x+ with `three/webgpu`.
+- 1 CLI agent (Claude Code or Codex, pick W05, stick to it for 1 cycle) + Copilot inline.
 
-`SPEC.md` template: goal / non-goals / constraints / acceptance criteria / perf budget. `AGENTS.md` template: stack / commands (`npm run dev/test/build`) / conventions / forbidden.
+### AI stages
+
+- **C1 — Stage A:** no agent for implementation. Tutor only.
+- **C2–C3 — A → B:** manual types, routes, schema, and auth.
+  Agent may do boilerplate, CSS, and tests only after yours exist.
+  Keep a weekly `agent-review.md` with 1 rejection.
+- **C4–C5 — Stage B:** you write the SPEC, agent scaffolds, you verify.
+  Require files-changed + run steps + test plan.
+- **C6+ — Stage C → D:** SPEC.md + AGENTS.md + eval checklist
+  (builds? tests? perf? auth? demo?) + `agent-failures.md`.
+
+### Bans
+
+No secrets in prompts. No `.env` committed.
+No agent code to main without green CI and a full diff read.
+If you cannot whiteboard it, you cannot claim it.
+
+`SPEC.md`: goal, non-goals, constraints, acceptance criteria, perf budget.
+`AGENTS.md`: stack, commands (`npm run dev/test/build`), conventions, forbidden.
 
 ---
 
 ## 5. LEARNING METHOD + MASTERY TESTS
 
-Per skill: 1 Why (transfer/pay) | 2 Prereqs | 3 Must-understand | 4 Manual [M] | 5 Delegable [A] | 6 Project | 7 Mastery test | 8 Evidence (live + README + numbers).
-Example DB index: Why N+1 kills apps → Prereq joins → Understand B-tree/EXPLAIN → Manual create+EXPLAIN ANALYZE 50k rows → Delegate migrations → Project prod-notes → Test fix <100ms → Evidence screenshot+writeup.
+Per skill, define all eight:
 
-**Gates (must pass to advance):** JS rebuild todo <2h + event-loop whiteboard | TS `tsc` clean + narrowing/generics | React add search <3h + data-flow | Node curl CRUD + middleware + break/fix validation | DB EXPLAIN before/after + N+1 fix | Auth session-vs-JWT + OWASP checklist | Docker stranger `compose up` <5m | C vector/list Valgrind clean + heap/stack + sockets | C++ RAII + pool TSan clean + race fix | Three cube + WebGL triangle + pipeline | TSL convert + both renderers + fps | Agent SPEC→deploy + rejection log | Flagship 10-min arch no notes + k6 + postmortem.
+1. Why it matters (transfer and pay signal).
+2. Prerequisites.
+3. What must be understood.
+4. What must be built manually `[M]`.
+5. What can be delegated `[A]`.
+6. Which project reinforces it.
+7. How mastery is tested.
+8. What evidence proves it (live demo + README + numbers).
+
+Example — DB index:
+
+Why N+1 kills apps → prereq joins → understand B-tree and EXPLAIN →
+manual `EXPLAIN ANALYZE` on 50k rows → delegate migrations →
+project `prod-notes` → test: fix to under 100ms →
+evidence: screenshot + writeup.
+
+### Gates (must pass to advance)
+
+- JS: rebuild todo under 2h + event-loop whiteboard.
+- TS: `tsc` clean + narrowing and generics.
+- React: add search under 3h + data flow.
+- Node: curl CRUD + middleware + break and fix validation.
+- DB: EXPLAIN before and after + N+1 fix.
+- Auth: session vs JWT + OWASP checklist.
+- Docker: stranger runs `compose up` under 5m.
+- C: vector and list Valgrind-clean + heap, stack, sockets.
+- C++: RAII + pool TSan-clean + race fix.
+- Three: cube + WebGL triangle + pipeline.
+- TSL: convert + both renderers + fps numbers.
+- Agent: SPEC to deploy + rejection log.
+- Flagship: 10-min arch talk, no notes + k6 + postmortem.
 
 ---
 
 ## 6. PROJECT LADDER + FLAGSHIP DECISION GATE
 
-L1 C1 `static-portfolio` + `js-primitives` (GH Pages+Vercel) | L2 C2–C3 `fullstack-notes` (React+TS+Node+Postgres+auth+tests+Docker) | L3 C4 `prod-notes` (Redis, rate-limit, Pino, /metrics, k6 + fix) + `c-labs` + `three-playground` | L4 C5–C6 ONE spike: RT presence (WS) OR 100k-particle WebGPU + profile OR C++ file-server/KV vs Node | L5 C7–C8 ONE flagship.
-Flagship options: **A Playground+Backend** (save/share scenes, leaderboard) | **B Realtime Viz+Ingest** (WS + Three + ingest benchmark) | **C Agent-Eval Harness** (bench AI code correctness/speed). Score 1–5 in W16 on employability/differentiation/feasibility/perf/demo. SPEC v0 W17, lock W20, thin-slice MVP <3 weeks. Must-have: live URL, README (problem, <5m quickstart, arch diagram, decisions, perf, what broke), tests+CI, observability, docs, 2 writeups, postmortem, GIF/video. No new projects after C7 without killing one.
+- **L1 (C1):** `static-portfolio` + `js-primitives` — GH Pages + Vercel.
+- **L2 (C2–C3):** `fullstack-notes` — React + TS + Node + Postgres + auth + tests + Docker.
+- **L3 (C4):** `prod-notes` — Redis, rate-limit, Pino, `/metrics`, k6 + fix.
+  Plus `c-labs` + `three-playground`.
+- **L4 (C5–C6, pick ONE):** realtime presence (WS),
+  or 100k-particle WebGPU + profile,
+  or C++ file-server / KV vs Node.
+- **L5 (C7–C8, ONE flagship only).**
+
+### Flagship options
+
+- **A — Playground + Backend:** save and share scenes, leaderboard.
+- **B — Realtime Viz + Ingest:** WebSockets + Three.js + ingest benchmark.
+- **C — Agent-Eval Harness:** benchmark AI code for correctness and speed.
+
+Score 1–5 in W16 on employability, differentiation,
+feasibility, perf, and demo value.
+SPEC v0 in W17, lock in W20, thin-slice MVP under 3 weeks.
+
+Flagship must-have:
+
+live URL, README (problem, under-5-minute quickstart, arch diagram,
+decisions, perf, what broke), tests + CI, observability,
+docs, 2 writeups, postmortem, GIF or video.
+
+No new projects after C7 without killing one.
 
 ---
 
@@ -678,73 +813,306 @@ Audit repos, LinkedIn 10-mo numbers retro, handoff 10/w pipeline.
 
 ## 8. PUBLIC PRESENCE
 
-**Principle:** Work → Artifact → Distribution. No post without commit/bench/demo/fix.
-**X (2–3/w C1–C3 → 3–5/w C4+):** Mon log, Wed bench/GIF, Fri failure. Always image/metric/link. Reply substantively to 3 builders/week. Track builder replies, not impressions.
-**LinkedIn (1/2w → 1/w):** hook result → context → tries → measurement → link, 150–250 words + image. Profile: headline role+proof, banner screenshot, featured demo+writeup+GitHub. 5–10 connects/week personalized + 3 substantive comments/week. Track views + recruiter msgs.
-**Peerlist:** durable evidence only, update per release. Top 3 + live links + outcome metric + GitHub/LinkedIn/X/site.
-**GitHub:** profile README (who/stack/best-3/contact), pin 3–6 best, each repo one-liner+topics+demo-top+<5m setup+arch (C4+)+CI badge+`.env.example`+LICENSE, PR workflow from C2, audit W32+W40, no streak farming.
+> **Principle:** Work → Artifact → Distribution.
+> No post without a commit, benchmark, demo, or fix.
+
+### X — Build in public (2–3/w in C1–C3 → 3–5/w in C4+)
+
+- Mon: build log. Wed: benchmark / GIF. Fri: failure / lesson.
+- Always include an image, a metric, or a link.
+- Reply substantively to 3 builders per week.
+- Track builder replies, not impressions.
+
+### LinkedIn — Professional narrative (1/2w → 1/w)
+
+- Format: hook (result) → context → tries → measurement → link.
+- 150–250 words + one image.
+- Profile: headline = role + proof, banner = screenshot,
+  featured = demo + writeup + GitHub.
+- 5–10 personalized connects per week + 3 substantive comments per week.
+- Track profile views + recruiter messages.
+
+### Peerlist — Durable evidence (per release only)
+
+- Top 3 projects + live links + one outcome metric each.
+- Link GitHub / LinkedIn / X / site. No feed spam.
+
+### GitHub — Source of truth
+
+- Profile README: who you are, stack, best 3, contact.
+- Pin 3–6 best repos. Each repo needs:
+  one-liner + topics + demo link on top +
+  under-5-minute setup + arch diagram (from C4) +
+  CI badge + `.env.example` + LICENSE.
+- PR workflow from C2. Audit at W32 and W40.
+- No streak farming.
 
 ---
 
 ## 9. OSS STRATEGY
 
-C1–C3 docs/typos/examples/repro in used projects (Vite, Three docs, small TS libs) → 1–2 merged. C4–C6 tests/small fix <50 lines, comment-first with plan, wait ack → 1/cycle. C7+ substantive fix/feature/bench + triage. Filter `good first issue` + `help wanted`, TS/JS/C, mid-size active <7d. Never first-PR auth/security/migration. Log in `oss.md`. Targets to validate: three.js, Vite, Prisma/Drizzle, TanStack Query. Goal 4–6 opened, 2–4 merged by W40.
+Progressive — start tiny, earn trust, then go deeper.
+
+- **C1–C3 — Docs and reproduction**
+
+  Docs, typos, examples, and repro scripts in projects you already use
+  (Vite, Three.js docs, small TS libs). Goal: 1–2 merged.
+
+- **C4–C6 — Tests and small fixes**
+
+  Tests and fixes under ~50 lines.
+  Comment first with your plan, wait for ack. Goal: 1 per cycle.
+
+- **C7+ — Substantive work**
+
+  Real bug fix, small feature, or benchmark + issue triage.
+
+How to pick:
+
+- Filter `good first issue` + `help wanted`.
+- Stick to TS / JS / C, mid-size repos active within 7 days.
+- Never pick auth, security, or migration as a first PR.
+- Log everything in `oss.md`.
+
+Targets to validate: three.js, Vite, Prisma / Drizzle, TanStack Query.
+
+Goal by W40: 4–6 opened, 2–4 merged.
 
 ---
 
 ## 10. CAREER / APPLICATION SYSTEM
 
-Exploration C1–C2: analyze 50 postings → core vs company-specific vs noise; target remote-first startups, YC, OSS-friendly. Boards: Simplify, Startup.jobs, internshipp.com, YC jobs, Wellfound, LinkedIn.
-Calibration C3–C4: 5–10/w low-stakes, expect <5% early.
-Positioning C5–C6: fix bottleneck (no views→README/demo; views→no reply→positioning; interviews→no offer→fundamentals).
-Aggressive C7–C10: 15–20/w tailored first paragraph + demo link + 5 outreaches/w founders/EMs/maintainers (stack observation + proof) + Day-7 follow-up once.
-Tracker: date/company/role/link/tailoring/response/stage/notes/follow-up. Weekly response% + conversion + hypothesis.
-Interview from C6: DSA pragmatic, JS via building, junior system design (shortener/todo backend), STAR from postmortems.
+Staged — do not wait until month 10 to apply.
+
+- **Exploration (C1–C2)**
+
+  Analyze 50 postings. Split core skills vs company-specific vs noise.
+  Target remote-first startups, YC, and OSS-friendly teams.
+
+  Boards: Simplify, Startup.jobs, internshipp.com, YC jobs, Wellfound, LinkedIn.
+
+- **Calibration (C3–C4)**
+
+  5–10 low-stakes apps per week. Expect under 5% reply early.
+  This is data, not failure.
+
+- **Positioning (C5–C6)**
+
+  Fix the bottleneck:
+  no views → fix README / demo;
+  views but no reply → fix positioning;
+  interviews but no offer → fix fundamentals.
+
+- **Aggressive (C7–C10)**
+
+  15–20 tailored apps per week.
+  Each app: tailored first paragraph + demo link.
+  Plus 5 outreaches per week to founders, EMs, and maintainers
+  (one stack observation + one proof link).
+  Follow up once on Day 7.
+
+- **Tracker**
+
+  `date / company / role / link / tailoring / response / stage / notes / follow-up`.
+  Review weekly: response %, conversion, and one bottleneck hypothesis.
+
+- **Interview prep (from C6)**
+
+  Pragmatic DSA, JS via building,
+  junior system design (shortener / todo backend),
+  STAR stories from your postmortems.
 
 ---
 
 ## 11. METRICS
 
-Capability: blind-rebuilds + debugging wins. Output: deploys/releases/OSS/benches. Public: artifact posts, views, builder replies, demo visits. Career: apps, response%, interviews, convos, referrals. Learning: retention + test pass + integration. AI: delegation success, rejection rate (>0 healthy), throughput vs defects. Review monthly; flat 2 cycles → change tactic.
+Small set, used for correction — not ego.
+
+- **Capability:** blind rebuilds + debugging wins.
+- **Output:** deploys, releases, OSS PRs, benchmarks.
+- **Public proof:** artifact posts, views, builder replies, demo visits.
+- **Career:** apps, response %, interviews, convos, referrals.
+- **Learning:** retention + test pass rate + project integration.
+- **AI leverage:** delegation success, rejection rate (above zero is healthy),
+  throughput vs defects.
+
+Review monthly. If a metric is flat for 2 cycles, change the tactic.
 
 ---
 
 ## 12. ADAPTATION + FAILSAFES + BACKUP ROUTES
 
-**Adaptation every W04/W08/...:** Observe (postings, agent changelogs, Three releases) → Compare vs spine → Classify (priority/impl/project/tool/position/apps) → Modify adaptive only + reason → Preserve core unless 2 cycles contrary. Core: pillars, manual-first, deploy-all, evidence>claims. Adaptive: versions, host, DB, agent, flagship A/B/C, cadence. Experiments 1-week box + kill criteria. No mid-cycle switch except breakage. New tech must win on employability/proof in 4w.
+### Adaptation (every W04 / W08 / …)
 
-**Failsafes (Detect → Immediate → Recovery → MV → Return):** A 1w behind: evidence miss → cut 50% ship Sun → 1w → deploy>polish → 2 on-time. B 2–3w: 2 misses → freeze learning 2w finish-started → 1 deploy → test pass. C Burnout: 3d dread/halved → 3d rest + MVW 50% 1–2w → small win. D Overwhelm >3d same bug: slice 1/10th, 2h box then help/issue, postmortem counts → smaller shipped. E Obsolete: 2-cycle shift → keep concept port core 1w → ported deploy. F Agents better: credible 2x → 1w experiment adopt if defects flat → boilerplate first → throughput up. G Agents blocked: quota → manual+free+docs → MVW manual → restored/adapted. H Market down: response halved → freelance/OSS/hybrid + 5+1/w → stable. I <3% after 30 tailored: audit demo/README/keywords fix 1/w → rewrite top README+loom → >5% or interview. J 0 builder replies 4w: GIF/bench + reply others → 2/w → 1 thread. K 3 new techs/2w: backlog + 48h cool-off → finish slice → 1w clean. L >2w no deploy: 1w ship sprint no courses → deploy anything → 2w streak. M 5 repos no tests: freeze harden best-1 to L3 → tests+CI+README → audit pass. N Cannot explain shipped: 2w Stage-A rebuild → whiteboard → mastery pass. O Flagship blocked 3w: postmortem + pivot thin slice reusing auth/DB → salvage module → new MVP <4w.
+1. **Observe** — postings, agent changelogs, Three.js releases.
+2. **Compare** — against the spine.
+3. **Classify** — priority, implementation, project, tool, position, or apps.
+4. **Modify** — adaptive layer only, with a written reason.
+5. **Preserve** — the core unless 2 cycles show strong contrary evidence.
 
-**Backup MV path (if overbroad):** drop C++ deep + WebGPU compute after demo, keep TS/React/Node/Postgres + 2 hardened apps + 1 OSS + pipeline. Systems/graphics optional. Never restart. Re-add one after 4 stable weeks.
+- **Core (stable):** pillars, manual-first, deploy-all, evidence over claims.
+- **Adaptive:** versions, host, DB, agent, flagship A / B / C, cadence.
+- **Experiments:** 1-week box + kill criteria. No mid-cycle switch except breakage.
+- New tech must win on employability or proof within 4 weeks to stay.
 
-**Anti-delusion:** Aspirational flagship+users+remote startup. Probable (if consistent) strong TS/React/Node/Postgres, 3–4 deploys, MVP, WebGPU demos, verified agent flow, OSS, interviews. Minimum 2 fullstack + CI/READMEs + 1 bench + 100+ apps = career value. Never assume guaranteed job/remote/salary/virality/senior.
+### Failsafes (Detect → Immediate → Recovery → MV → Return)
+
+| Code | Failure | Recovery |
+|---|---|---|
+| A | 1w behind — evidence missed | Cut scope 50%, ship Sun. 1w recovery. Return after 2 on-time weeks. Deploy over polish. |
+| B | 2–3w behind — 2 misses | Freeze learning for 2w, finish started work only. Ship 1 deploy. Return on test pass. |
+| C | Burnout — 3d dread or output halved | 3d rest + MVW at 50% for 1–2w. Return with one small win. |
+| D | Overwhelm — stuck 3d on same bug | Slice to 1/10th. 2h box, then ask or file an issue. A postmortem still counts. |
+| E | Tech obsolete — 2-cycle shift | Keep the concept, port the core in 1w. Return on ported deploy. |
+| F | Agents much better — credible 2x | 1w experiment. Adopt if defects stay flat. Boilerplate first. |
+| G | Agents blocked — quota or cost | Fall back to manual + free tier + docs. MVW manual week. |
+| H | Market down — response halved | Shift to freelance / OSS / hybrid. Keep 5 apps + 1 OSS per week. |
+| I | Under 3% reply after 30 tailored apps | Audit demo, README, and keywords. Fix 1 per week. Rewrite top README + loom. Return above 5% or at interview. |
+| J | 0 builder replies in 4w | Switch to GIF / benchmark + reply to others. 2 per week. Return at 1 real thread. |
+| K | 3 new techs in 2w | Backlog + 48h cool-off. Finish the current slice. 1 clean week. |
+| L | Over 2w with no deploy | 1w ship sprint, no courses. Deploy anything. Return on 2w streak. |
+| M | 5 repos with no tests | Freeze new work. Harden the best one to L3: tests + CI + README. |
+| N | Cannot explain shipped code | 2w Stage-A rebuild. Whiteboard it. Return on mastery pass. |
+| O | Flagship blocked 3w | Postmortem + pivot to a thin slice reusing auth / DB. Salvage a module. New MVP under 4w. |
+
+### Backup MV Path (if overbroad)
+
+Drop the C++ deep dive + WebGPU compute after the demo.
+Keep TS / React / Node / Postgres + 2 hardened apps + 1 OSS + pipeline.
+Systems and graphics become optional. Never restart.
+Re-add one differentiator after 4 stable weeks.
+
+### Anti-Delusion
+
+- **Aspirational:** flagship + users + remote startup.
+- **Probable (if consistent):** strong TS / React / Node / Postgres,
+  3–4 deploys, MVP, WebGPU demos, verified agent flow, OSS, interviews.
+- **Minimum:** 2 fullstack apps + CI / READMEs + 1 benchmark + 100+ apps = career value.
+- **Never assume:** guaranteed job, remote, salary, virality, or senior title.
 
 ---
 
 ## 13. RESOURCES
 
-MDN JS https://developer.mozilla.org/en-US/docs/Web/JavaScript + javascript.info https://javascript.info + YDKJS https://github.com/getify/You-Dont-Know-JS | HTTP MDN https://developer.mozilla.org/en-US/docs/Web/HTTP + HPBN https://hpbn.co | TS Handbook https://www.typescriptlang.org/docs/handbook/intro.html + TotalTS https://www.totaltypescript.com | React https://react.dev + Query https://tanstack.com/query/latest + Tailwind https://tailwindcss.com/docs | Node https://nodejs.org/en/docs + Express https://expressjs.com + Postgres https://www.postgresql.org/docs/ + EXPLAIN https://www.postgresql.org/docs/current/using-explain.html + Prisma https://www.prisma.io/docs + Redis https://redis.io/docs | OWASP https://owasp.org/www-project-top-ten/ + PortSwigger https://portswigger.net/web-security | Vitest https://vitest.dev + Playwright https://playwright.dev + Docker https://docs.docker.com + Actions https://docs.github.com/en/actions + Vercel https://vercel.com/docs + Railway https://docs.railway.com + Fly https://fly.io/docs + k6 https://k6.io/docs | GCC https://gcc.gnu.org/onlinedocs/ + Beej C https://beej.us/guide/bgc/ + Beej Net https://beej.us/guide/bgnet/ + OSTEP https://pages.cs.wisc.edu/~remzi/OSTEP/ + cppreference https://en.cppreference.com + Valgrind https://valgrind.org/docs/manual/ | Three https://threejs.org/docs/ + Roadmap https://threejsroadmap.com/blog + WebGPU MDN https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API + Fundamentals https://webgpufundamentals.org | Claude Code https://docs.anthropic.com/en/docs/claude-code + Codex https://developers.openai.com/codex | Jobs: internshipp https://internshipp.com/location/remote + Startup https://startup.jobs + YC https://www.ycombinator.com/jobs + Simplify https://simplify.jobs + GoodFirstIssue https://goodfirstissue.dev. One primary/cycle; if no commit in 7d drop it.
+One primary per area per cycle. If a resource leads to no commit in 7 days, drop it.
+
+### Web / JS
+
+- MDN JavaScript — https://developer.mozilla.org/en-US/docs/Web/JavaScript
+- javascript.info — https://javascript.info
+- You Don't Know JS — https://github.com/getify/You-Dont-Know-JS
+
+### HTTP / Network
+
+- MDN HTTP — https://developer.mozilla.org/en-US/docs/Web/HTTP
+- High Performance Browser Networking — https://hpbn.co
+
+### TypeScript / Frontend
+
+- TS Handbook — https://www.typescriptlang.org/docs/handbook/intro.html
+- Total TypeScript — https://www.totaltypescript.com
+- React — https://react.dev
+- TanStack Query — https://tanstack.com/query/latest
+- Tailwind — https://tailwindcss.com/docs
+
+### Backend / DB
+
+- Node — https://nodejs.org/en/docs
+- Express — https://expressjs.com
+- Postgres — https://www.postgresql.org/docs/
+- EXPLAIN — https://www.postgresql.org/docs/current/using-explain.html
+- Prisma — https://www.prisma.io/docs
+- Redis — https://redis.io/docs
+
+### Auth / Security
+
+- OWASP Top 10 — https://owasp.org/www-project-top-ten/
+- PortSwigger Academy — https://portswigger.net/web-security
+
+### Testing / Deploy
+
+- Vitest — https://vitest.dev
+- Playwright — https://playwright.dev
+- Docker — https://docs.docker.com
+- GitHub Actions — https://docs.github.com/en/actions
+- Vercel — https://vercel.com/docs
+- Railway — https://docs.railway.com
+- Fly — https://fly.io/docs
+- k6 — https://k6.io/docs
+
+### Systems (C / C++)
+
+- GCC — https://gcc.gnu.org/onlinedocs/
+- Beej C — https://beej.us/guide/bgc/
+- Beej Net — https://beej.us/guide/bgnet/
+- OSTEP — https://pages.cs.wisc.edu/~remzi/OSTEP/
+- cppreference — https://en.cppreference.com
+- Valgrind — https://valgrind.org/docs/manual/
+
+### Graphics / WebGPU
+
+- Three.js — https://threejs.org/docs/
+- Three.js Roadmap — https://threejsroadmap.com/blog
+- WebGPU MDN — https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API
+- WebGPU Fundamentals — https://webgpufundamentals.org
+
+### AI Agents
+
+- Claude Code — https://docs.anthropic.com/en/docs/claude-code
+- Codex — https://developers.openai.com/codex
+
+### Jobs / OSS
+
+- Remote internships — https://internshipp.com/location/remote
+- Startup.jobs — https://startup.jobs
+- YC Jobs — https://www.ycombinator.com/jobs
+- Simplify — https://simplify.jobs
+- Good First Issue — https://goodfirstissue.dev
 
 ---
 
 ## 14. REVIEW TEMPLATES + DELIVERABLES
 
-**Daily `log.md`:** `Date | Deep hrs | Commit | Test? | Blocked? | Tomorrow 1`
-**Weekly (Wed 30m):** shipped? evidence? response%? waste? next-1-thing?
-**4-week (3h, publish 1-para retro):**
+### Daily (`log.md`, 5 min)
+
+`Date | Deep hrs | Commit | Test? | Blocked? | Tomorrow 1`
+
+### Weekly (Wed, 30 min)
+
+Shipped? Evidence? Response %? Waste? Next one thing?
+
+### 4-Week (3h, publish a 1-paragraph retro)
+
 ```
 CYCLE Cx (dates):
-CAPABILITY: [build/explain/debug + tests]
+CAPABILITY: [build / explain / debug + tests]
 PROJECT: [URLs, releases, CI]
-PUBLIC: [posts+links, views, replies, visits]
+PUBLIC: [posts + links, views, replies, visits]
 CAREER: [apps, %, interviews, convos, OSS]
-MARKET: [postings/agent/three shifts]
+MARKET: [postings / agent / three shifts]
 FAILURES / WASTE / BOTTLENECK (single biggest)
 NEXT ADAPTATION: [adaptive change + reason]
 CORE UNCHANGED: [confirm]
 ```
 
-**Deliverables:** W12 L2 + Docker/CI + 1–2 OSS docs + 30 postings | W20 prod k6 + C echo/pool/HTTP + bench + playground + TSL + L4 + SPEC locked + 100+ touches | W28 MVP 0.9 + tests/CI + observability + diagram + postmortem + video + compute + 2nd OSS + 200+ touches | W40 v1.0 + 2nd proof + 3–4 pins 60-sec pass + 2–4 merged OSS + 20+ artifact posts + 200+ connects + 300–450 touches + STAR/mocks + 10/w handoff.
-**End-state test:** stranger clone-run <5m, 10-min arch no notes, numbers shown, failures shown. Standard: “I can build it manually. I understand it. I can make an agent build it faster. I can tell when wrong. I can measure. I can explain. I have proof.”
+### Deliverables
 
-Start D1 Thu Oct 01 tonight: init repos + log.md + first commit.
+- **W12:** L2 + Docker and CI + 1–2 OSS docs + 30 postings.
+- **W20:** prod k6 + C echo, pool, and HTTP + benchmarks +
+  playground + TSL + L4 + SPEC locked + 100+ touches.
+- **W28:** MVP 0.9 + tests and CI + observability + diagram +
+  postmortem + video + compute + 2nd OSS + 200+ touches.
+- **W40:** v1.0 + 2nd proof + 3–4 pins passing the 60-sec test +
+  2–4 merged OSS + 20+ artifact posts + 200+ connects +
+  300–450 touches + STAR and mocks + 10-per-week handoff.
+
+### End-State Test
+
+Stranger clone-run under 5m. 10-min arch talk with no notes.
+Numbers shown. Failures shown.
+
+> *“I can build it manually. I understand it.*
+> *I can make an agent build it faster. I can tell when it is wrong.*
+> *I can measure. I can explain. I have proof.”*
+
+Start D1 Thu Oct 01 tonight: init repos + `log.md` + first commit.
